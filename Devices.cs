@@ -33,6 +33,47 @@ namespace ver1
 
         public int Counter { get; private set; } = 0;
     }
+    public class Copier : BaseDevice
+    {
+        public Copier()
+        {
+            int Counter;
+            int PrintCounter;
+            int ScanCounter;
+
+            if ( IDevice.State == IDevice.State.off )
+            {
+                break;
+            }
+
+            if (IDevice.State == IDevice.State.on)
+            {
+
+            }
+            public void Print()
+            {
+                DateTime localDate = DateTime.Now;
+                string document = "aa";
+                Console.WriteLine(localDate + " Print: " + document);
+                PrintCounter++;
+            }
+
+            public void Scan()
+            {
+                DateTime localDate = DateTime.Now;
+                string document = "aa";
+                Console.WriteLine(localDate + " Scan: " + document);
+                ScanCounter++;
+            }
+
+            public void ScanAndPrint()
+            {
+                Print();
+                Scan();
+
+            }
+        }
+    }
 
     public interface IPrinter : IDevice
     {
